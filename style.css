@@ -92,3 +92,14 @@ body {
   transform: rotate(135deg);
   transition: all 1.5s;
 }
+@media (min-width: 820px) {
+  .tittle {
+    font-size: 1.5rem;
+  }
+  .accordion-item {
+    font-size: 1.2rem;
+  }
+  .accordion-item_label > div {
+    width: 1.5rem;
+    height: 1.5rem;
+}
