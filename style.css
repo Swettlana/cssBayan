@@ -49,6 +49,7 @@ body {
   height: 15px;
   background-image: url("./assets/icon.ico");
   background-size: contain;
+  transition: all 1s;
   /*display: none;*/
 }
 
@@ -56,16 +57,35 @@ body {
   margin: 0 auto;
   padding: 5px;
   width: 100%;
+  height: 0;
+  overflow: hidden;
+  transition: all 2s;
 }
 .accordion-item_content > img {
   width: 100%;
-  /*opacity: 0;*/
-  height: 0;
-  transition: 2s;
+  height: auto;
+  opacity: 0;
+  transition: all 1.5s;
+}
+
+.accordion-item_label:hover ~ .accordion-item_content {
+  height: auto;
+}
+.accordion-item_label:hover ~ .accordion-item_content > img {
+  opacity: 1;
+}
+.accordion-item_label:hover {
+  color: #212524;
+}
+.accordion-item_label:hover::after {
+  transform: rotate(45deg);
+}
+
+.accordion-item_input:checked ~ .accordion-item_content {
+  height: auto;
 }
 .accordion-item_input:checked ~ .accordion-item_content > img {
-  height: auto;
-  /*opacity: 1;*/
+  opacity: 1;
 }
 .accordion-item_input:checked ~ .accordion-item_label {
   color: #212524;
