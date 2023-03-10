@@ -2,7 +2,7 @@ body {
   background-color: #d6dc94;
 }
 .wrapper {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   background-color: #f3f0e9;
   padding: 5%;
@@ -16,19 +16,47 @@ body {
   padding-bottom: 3px;
   font-size: 20px;
 }
-.accordion {
-}
+
 .accordion-item {
   border-bottom: 1px solid #5d9c65;
   padding-top: 3px;
   padding-bottom: 3px;
   font-size: 15px;
   font-weight: bold;
-  color: #4e8b83;
 }
 .accordion-item_input {
+  position: absolute;
   opacity: 0;
   width: 0;
+}
+.accordion-item_label {
+  display: block;
+  width: 90%;
+  position: relative;
+  color: #4e8b83;
+}
+.accordion-item_label::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  background-image: url("./assets/icon.ico");
+  background-size: contain;
+  /*display: none;*/
+}
+
+.accordion-item_content {
+  margin: 0 auto;
+  padding: 5px;
+  width: 100%;
+}
+.accordion-item_content > img {
+  width: 100%;
+  /*opacity: 0;*/
+  height: 0;
+  transition: 2s;
 }
 .accordion-item_input:checked ~ .accordion-item_content > img {
   height: auto;
@@ -37,14 +65,6 @@ body {
 .accordion-item_input:checked ~ .accordion-item_label {
   color: #212524;
 }
-.accordion-item_content {
-  margin: 0 auto;
-  padding: 5px;
-  width: 90%;
-}
-.accordion-item_content > img {
-  width: 100%;
-  /*opacity: 0;*/
-  height: 0;
-  transition: 2s;
+.accordion-item_input:checked ~ .accordion-item_label::after {
+  transform: rotate(45deg);
 }
