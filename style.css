@@ -1,6 +1,9 @@
 body {
   background-color: #d6dc94;
 }
+* {
+  box-sizing: border-box;
+}
 .wrapper {
   width: 80%;
   margin: 0 auto;
@@ -31,14 +34,16 @@ body {
 }
 .accordion-item_label {
   display: block;
-  width: 90%;
+  width: 100%;
+  padding-right: 16px;
+  box-sizing: border-box;
   position: relative;
   color: #4e8b83;
 }
 .accordion-item_label::after {
   content: "";
   position: absolute;
-  right: -5px;
+  right: 0;
   top: 0;
   width: 15px;
   height: 15px;
