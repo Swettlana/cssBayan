@@ -9,67 +9,64 @@ body {
   margin: 0 auto;
   background-color: #f3f0e9;
   padding: 5%;
-  border-radius: 5px;
+  border-radius: 0.3rem;
 }
+
 .tittle {
-  border-bottom: 2px solid #5d9c65;
+  border-bottom: 0.12rem solid #5d9c65;
   text-transform: uppercase;
   color: #212524;
   font-weight: bold;
-  padding-bottom: 3px;
-  font-size: 20px;
+  padding-bottom: 1%;
+  font-size: 1rem;
 }
 
 .accordion-item {
-  border-bottom: 1px solid #5d9c65;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  font-size: 15px;
+  border-bottom: 0.1rem solid #5d9c65;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-size: 0.8rem;
   font-weight: bold;
 }
 .accordion-item_input {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-}
-.accordion-item_label {
-  display: block;
-  width: 100%;
-  padding-right: 16px;
-  box-sizing: border-box;
-  position: relative;
-  color: #4e8b83;
-}
-.accordion-item_label::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 15px;
-  height: 15px;
-  background-image: url("./assets/icon.ico");
-  background-size: contain;
-  transition: all 1s;
-  /*display: none;*/
+  display: none;
 }
 
+.accordion-item_label {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  color: #4e8b83;
+}
+.accordion-item_label > p {
+  padding: 0;
+  margin: 0;
+  width: 90%;
+}
+.accordion-item_label > div {
+  width: 1rem;
+  height: 1rem;
+  background-image: url("./assets/icon.ico");
+  background-size: contain;
+  transition: all 0.3s;
+}
 .accordion-item_content {
   margin: 0 auto;
-  padding: 5px;
-  width: 100%;
+  width: 0;
+  padding: 0;
   height: 0;
-  overflow: hidden;
-  transition: all 2s;
+  object-fit: contain;
+  transition: all 0.3s;
 }
 .accordion-item_content > img {
   width: 100%;
   height: auto;
-  opacity: 0;
-  transition: all 1.5s;
 }
 
-.accordion-item_label:hover ~ .accordion-item_content {
-  height: auto;
+/*.accordion-item_label:hover ~ .accordion-item_content {
+  display: block;
 }
 .accordion-item_label:hover ~ .accordion-item_content > img {
   opacity: 1;
@@ -79,17 +76,19 @@ body {
 }
 .accordion-item_label:hover::after {
   transform: rotate(45deg);
-}
+}*/
 
 .accordion-item_input:checked ~ .accordion-item_content {
   height: auto;
+  width: 100%;
+  padding: 2%;
+  transition: all 1.5s;
 }
-.accordion-item_input:checked ~ .accordion-item_content > img {
-  opacity: 1;
-}
+
 .accordion-item_input:checked ~ .accordion-item_label {
   color: #212524;
 }
-.accordion-item_input:checked ~ .accordion-item_label::after {
-  transform: rotate(45deg);
+.accordion-item_input:checked ~ .accordion-item_label > div {
+  transform: rotate(135deg);
+  transition: all 1.5s;
 }
