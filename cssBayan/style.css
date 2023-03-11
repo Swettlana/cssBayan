@@ -65,15 +65,15 @@ input {
   object-fit: contain;
   width: 100%;
 }
-/*CHECKED*/
-.accordion-item_input:checked ~ .accordion-item_label {
+
+input:checked ~ .accordion-item_label {
   color: #212524;
 }
-.accordion-item_input:checked ~ .accordion-item_label .accordion-item_content {
+input:checked ~ .accordion-item_label .accordion-item_content {
   height: 10rem;
   transition: all 1s;
 }
-.accordion-item_input:checked ~ .icon {
+input:checked ~ .icon {
   transform: rotate(135deg);
   transition: all 1s;
 }
@@ -89,16 +89,14 @@ input {
     width: 1.5rem;
     height: 1.5rem;
   }
-  .accordion-item_input:checked
-    ~ .accordion-item_label
-    .accordion-item_content {
+  input:checked ~ .accordion-item_label .accordion-item_content {
     height: 30rem;
   }
 }
 
 @media (min-width: 1024px) {
   .wrapper {
-    width: 60%;
+    width: 70%;
     padding: 1%;
   }
   .accordion-item {
@@ -142,9 +140,7 @@ input {
     transition: all 1s;
   }
   /*CHECKED*/
-  .accordion-item_input:checked
-    ~ .accordion-item_label
-    .accordion-item_content {
+  input:checked ~ .accordion-item_label .accordion-item_content {
     height: 40rem;
     transition: all 1s;
   }
