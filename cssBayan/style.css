@@ -4,21 +4,23 @@ body {
 * {
   box-sizing: border-box;
 }
+input {
+  display: none;
+}
 .wrapper {
   width: 80%;
   margin: 0 auto;
-  background-color: #f3f0e9;
   padding: 5%;
+  background-color: #f3f0e9;
   border-radius: 0.3rem;
 }
-
 .tittle {
+  padding-bottom: 1%;
   border-bottom: 0.12rem solid #5d9c65;
+  font-size: 1rem;
   text-transform: uppercase;
   color: #212524;
   font-weight: bold;
-  padding-bottom: 1%;
-  font-size: 1rem;
 }
 
 .accordion-item {
@@ -26,15 +28,9 @@ body {
   font-size: 0.8rem;
   font-weight: bold;
 }
-.accordion-item_input {
-  display: none;
-}
-
 .accordion-item_label {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
   align-items: center;
   padding: 2% 0;
   color: #4e8b83;
@@ -57,33 +53,31 @@ body {
   background-size: contain;
   transition: all 0.4s;
 }
-
 .accordion-item_content {
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   width: 100%;
   height: 0;
-  padding: 2%;
-  transition: all 0.5s;
+  padding: 1%;
+  transition: all 0.4s;
 }
 .accordion-item_content > img {
   object-fit: contain;
   width: 100%;
 }
-
+/*CHECKED*/
+.accordion-item_input:checked ~ .accordion-item_label {
+  color: #212524;
+}
 .accordion-item_input:checked ~ .accordion-item_label .accordion-item_content {
   height: 10rem;
   transition: all 1s;
-}
-
-.accordion-item_input:checked ~ .accordion-item_label {
-  color: #212524;
 }
 .accordion-item_input:checked ~ .icon {
   transform: rotate(135deg);
   transition: all 1s;
 }
+
 @media (min-width: 820px) {
   .tittle {
     font-size: 1.5rem;
@@ -110,14 +104,9 @@ body {
   .accordion-item {
     padding: 1%;
   }
-
   .accordion,
-  .accordion-item_label,
-  .accordion-item_content {
+  .accordion-item_label {
     cursor: pointer;
-  }
-  .accordion-item_content {
-    padding: 0;
   }
   .accordion-item_label {
     transition: all 1s;
@@ -146,11 +135,11 @@ body {
   }
   .accordion-item:hover .accordion-item_content {
     height: 40rem;
-    transition: all 0.7s;
+    transition: all 1s;
   }
   .accordion-item:hover .icon {
     transform: rotate(135deg);
-    transition: all 1.5s;
+    transition: all 1s;
   }
   /*CHECKED*/
   .accordion-item_input:checked
@@ -159,7 +148,6 @@ body {
     height: 40rem;
     transition: all 1s;
   }
-
   /*ACTIVE*/
   .accordion-item_label:active {
     color: #4e8b83 !important;
@@ -172,13 +160,13 @@ body {
 }
 @media (min-width: 1920px) {
   .tittle {
-    font-size: 3.1rem;
+    font-size: 3rem;
   }
   .accordion-item {
     font-size: 2.6rem;
   }
   .icon {
-    width: 3.1rem;
-    height: 3.1rem;
+    width: 3rem;
+    height: 3rem;
   }
 }
