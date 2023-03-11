@@ -73,7 +73,7 @@ input:checked ~ .accordion-item_label .accordion-item_content {
   height: 10rem;
   transition: all 1s;
 }
-input:checked ~ .icon {
+input:checked ~ .accordion-item_label .icon {
   transform: rotate(135deg);
   transition: all 1s;
 }
