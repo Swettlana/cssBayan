@@ -32,19 +32,25 @@ body {
 
 .accordion-item_label {
   display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
   padding: 2% 0;
   color: #4e8b83;
 }
-.accordion-item_label > p {
+.accordion-item_tittle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.accordion-item_tittle > p {
   padding: 0;
   margin: 0;
   width: 90%;
 }
-.accordion-item_label > div {
+.icon {
   width: 1rem;
   height: 1rem;
   background-image: url("./assets/icon.ico");
@@ -64,7 +70,7 @@ body {
   height: auto;
 }
 
-.accordion-item_input:checked ~ .accordion-item_content {
+.accordion-item_input:checked ~ .accordion-item_label .accordion-item_content {
   height: auto;
   width: 100%;
   padding: 2%;
@@ -74,7 +80,7 @@ body {
 .accordion-item_input:checked ~ .accordion-item_label {
   color: #212524;
 }
-.accordion-item_input:checked ~ .accordion-item_label > div {
+.accordion-item_input:checked ~ .icon {
   transform: rotate(135deg);
   transition: all 1.5s;
 }
@@ -85,13 +91,21 @@ body {
   .accordion-item {
     font-size: 1.2rem;
   }
-  .accordion-item_label > div {
+  .icon {
     width: 1.5rem;
     height: 1.5rem;
   }
 }
 
 @media (min-width: 1024px) {
+  .wrapper {
+    width: 30%;
+    padding: 2%;
+  }
+  .accordion-item {
+    padding: 2%;
+  }
+
   .accordion,
   .accordion-item_label,
   .accordion-item_content {
@@ -100,7 +114,7 @@ body {
   .accordion-item_label {
     transition: all 1s;
   }
-  .accordion-item_label > div {
+  .icon {
     opacity: 0;
     transition: all 1s;
   }
@@ -109,30 +123,41 @@ body {
     color: #212524;
   }
 
-  .accordion:hover .accordion-item_label > div {
+  .accordion:hover .icon {
     opacity: 1;
   }
 
+  .accordion-item:hover .accordion-item_content {
+    height: auto;
+    width: 100%;
+    padding: 2%;
+    transition: all 0.7s;
+  }
+  .accordion-item:hover .icon {
+    transform: rotate(135deg);
+    transition: all 1.5s;
+  }
+
   .tittle {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
   .accordion-item {
-    font-size: 3rem;
+    font-size: 1.8rem;
   }
-  .accordion-item_label > div {
-    width: 4rem;
-    height: 4rem;
+  .icon {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 @media (min-width: 1920px) {
   .tittle {
-    font-size: 5rem;
+    font-size: 3.1rem;
   }
   .accordion-item {
-    font-size: 4rem;
+    font-size: 2.6rem;
   }
-  .accordion-item_label > div {
-    width: 5rem;
-    height: 5rem;
+  .icon {
+    width: 3.1rem;
+    height: 3.1rem;
   }
 }
